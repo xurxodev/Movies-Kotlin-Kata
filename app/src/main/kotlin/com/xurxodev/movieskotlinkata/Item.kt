@@ -3,7 +3,7 @@ package com.xurxodev.movieskotlinkata
 fun getItems(): List<Item> {
     var items:MutableList<Item> = mutableListOf<Item>()
 
-    val BASE_ADDRESS = "https://image.tmdb.org/t/p/w1300_and_h730_bestv2/"
+    val BASE_ADDRESS = "http://image.tmdb.org/t/p/w1300_and_h730_bestv2/"
 
     items.add(Item(1,"Inferno", BASE_ADDRESS + "anmLLbDx9d98NMZRyVUtxwJR6ab.jpg"))
     items.add(Item(2,"Jack Reacher: Never Go Back", BASE_ADDRESS + "4ynQYtSEuU5hyipcGkfD6ncwtwz.jpg"))
