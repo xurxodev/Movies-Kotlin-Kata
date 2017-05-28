@@ -3,6 +3,7 @@ package com.xurxodev.movieskotlinkata
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import com.xurxodev.moviesandroidkotlin.R
+import com.xurxodev.movieskotlinkata.data.getItems
 import kotlinx.android.synthetic.main.activity_detail.*
 
 class DetailActivity : AppCompatActivity() {
