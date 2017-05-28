@@ -17,10 +17,10 @@ This repository contains an Android application to show movies information:
 
 Every branch is a kata for refactor from app without best practices and coupled architecture to Clean Architecture and best practices. Master branch contains final result after all katas.
 
-* [Kata 1: Dependency Injection]()
-* [Kata 2: Model View Presenter]()
-* [Kata 3: Clean Architecture - Domain layer]()
-* [Kata 4: Testing with Espresso](https://github.com/xurxodev/)
+* Kata 1: Dependency Injection
+* Kata 2: Model View Presenter]()
+* Kata 3: Clean Architecture - Domain layer
+* Kata 4: Testing with Espresso](https://github.com/xurxodev/
 
 ## Developed By
 
