@@ -20,7 +20,7 @@ Every branch is a kata for refactor from app without best practices and coupled 
 * Kata 1: Dependency Injection
 * Kata 2: Model View Presenter]()
 * Kata 3: Clean Architecture - Domain layer
-* Kata 4: Testing with Espresso](https://github.com/xurxodev/
+* Kata 4: Testing with Espresso
 
 ## Developed By
 
