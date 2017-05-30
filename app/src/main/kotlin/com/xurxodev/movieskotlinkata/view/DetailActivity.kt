@@ -1,9 +1,9 @@
-package com.xurxodev.movieskotlinkata
+package com.xurxodev.movieskotlinkata.view
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import com.xurxodev.moviesandroidkotlin.R
-import com.xurxodev.movieskotlinkata.data.getItems
+import com.xurxodev.movieskotlinkata.data.FakeMovieRepository
 import kotlinx.android.synthetic.main.activity_detail.*
 
 class DetailActivity : AppCompatActivity() {
@@ -16,7 +16,7 @@ class DetailActivity : AppCompatActivity() {
         setContentView(R.layout.activity_detail)
 
         val id = intent.getLongExtra(EXTRA_ID, -1)
-        val item = getItems().firstOrNull{it.id == id}
+        val item = FakeMovieRepository(this).getById(id)
 
         if (item != null){
             item_image.loadUrl(item.url)

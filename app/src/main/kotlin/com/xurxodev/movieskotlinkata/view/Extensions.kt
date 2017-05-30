@@ -1,4 +1,4 @@
-package com.xurxodev.movieskotlinkata
+package com.xurxodev.movieskotlinkata.view
 
 import android.content.Context
 import android.view.LayoutInflater
