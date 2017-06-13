@@ -11,6 +11,7 @@ class DetailActivity : AppCompatActivity() {
     companion object{
         val EXTRA_ID = "DetailActivity:id"
     }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)

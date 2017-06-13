@@ -26,6 +26,12 @@ class ItemAdapter(val listener: (Movie) -> Unit) :
 
     fun setMovies (movies: List<Movie>){
         this.movies = movies
+        this.notifyDataSetChanged()
+    }
+
+    fun clearMovies() {
+        movies = ArrayList()
+        this.notifyDataSetChanged()
     }
 
     override fun getItemCount() = movies.size
@@ -33,5 +39,4 @@ class ItemAdapter(val listener: (Movie) -> Unit) :
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
     }
-
 }

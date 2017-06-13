@@ -20,7 +20,18 @@ class FakeMovieRepository (context: Context){
         movies.add(Movie(6,"Deepwater Horizon", BASE_ADDRESS + "zjYdnBHbIOYBqKZxvBUsT5MevUA.jpg"))
         movies.add(Movie(7,"A Monster Calls", BASE_ADDRESS + "xVW8REyVqKwxAtUYY07UGlZH43L.jpg"))
 
+        simulateDelay();
+
         return movies.toList()
+    }
+
+    private fun simulateDelay() {
+        try {
+            Thread.sleep(2000)
+        } catch (e: InterruptedException) {
+            e.printStackTrace()
+        }
+
     }
 
     fun getById (id: Long): Movie{
