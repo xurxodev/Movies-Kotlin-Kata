@@ -3,6 +3,7 @@ package com.xurxodev.movieskotlinkata.view
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.view.View
 import com.xurxodev.moviesandroidkotlin.R
 import com.xurxodev.moviesandroidkotlin.R.id.movies_title_text_view
 import com.xurxodev.movieskotlinkata.data.FakeMovieRepository
@@ -54,11 +55,13 @@ class MainActivity : AppCompatActivity() {
 
     private fun loadingMovies() {
         itemAdapter.clearMovies();
+        pb_loading.visibility = View.VISIBLE
         movies_title_text_view.text =getString(R.string.loading_movies_text);
     }
 
     private fun loadedMovies(movies: List<Movie>) {
         itemAdapter.setMovies(movies)
+        pb_loading.visibility = View.GONE
         refreshTitleWithMoviesCount(movies)
     }
 
