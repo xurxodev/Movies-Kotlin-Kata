@@ -1,26 +1,48 @@
 
 ![](http://xurxodev.com/content/images/2017/04/xurxodev-readme.png) 
-#  Movies Kotlin Kata [![Build Status](https://travis-ci.org/xurxodev/Movies-Kotlin-Kata.svg?branch=master)](https://travis-ci.org/xurxodev/Movies-Kotlin-Kata)
+#  Movies Kotlin Kataff
 Movies Kotlin kata for practice Clean Architecture and Best Practices in Android using Kotlin, implemented by Jorge Sánchez (Xurxodev)
 
-## Considerations
+## Kata 1
+
+- We are here to practice Dependency Injection.
+- We are going to use [Dagger2](https://google.github.io/dagger/) as Dependency Injector.
+- We are going to practice pair programming.
+
+## Considerations 
 
 Master branch contains already solved katas, exists a branch for every kata.
 
 ## Getting started
 
-This repository contains an Android application to show movies information:
+This repository contains an Android application written in kotlin to show movies information:
 
 ![](/art/movies.gif)
 
-## Katas
+The application initial state without dependency injection is ready to just start refactoring. 
 
-Every branch is a kata for refactor from app without best practices and coupled architecture to Clean Architecture and best practices. Master branch contains final result after all katas.
+## Tasks
 
-* Kata 1: Dependency Injection
-* Kata 2: Model View Presenter]()
-* Kata 3: Clean Architecture - Domain layer
-* Kata 4: Testing with Espresso
+Your task as Android Developer is to **refactoring to inject dependencies**, only singleton dependencies.
+The recommendation for this exercise is:
+
+  * Before starting
+    1. Fork this repository and Checkout `kata-di-movies` branch or download zip.
+    3. Execute the application, explore it manually and make yourself familiar with the code.
+
+  * To help you get started:     
+    1. Configure dagger 
+    2. Identify singleton dependencies.
+    3. Create module/s, component/s, custom application, set targets where inject dependencies
+    4. Execute the app and verify that all is right
+    
+## Documentation
+
+There are some links which can be useful to finish these tasks:
+
+* [Official docs Dagger 2](https://google.github.io/dagger/)
+* [Dependency Injection with Dagger 2](https://guides.codepath.com/android/Dependency-Injection-with-Dagger-2)
+* [https://antonioleiva.com/dagger-android-kotlin/](https://antonioleiva.com/dagger-android-kotlin/)
 
 ## Developed By
 
