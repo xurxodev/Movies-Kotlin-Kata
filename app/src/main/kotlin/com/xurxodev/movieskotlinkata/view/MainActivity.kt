@@ -4,7 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import com.xurxodev.moviesandroidkotlin.R
-import com.xurxodev.moviesandroidkotlin.R.id.movies_title_text_view
+import com.xurxodev.movieskotlinkata.App
 import com.xurxodev.movieskotlinkata.data.FakeMovieRepository
 import com.xurxodev.movieskotlinkata.model.Movie
 import kotlinx.android.synthetic.main.activity_main.*
@@ -12,14 +12,19 @@ import kotlinx.coroutines.experimental.CommonPool
 import kotlinx.coroutines.experimental.android.UI
 import kotlinx.coroutines.experimental.async
 import kotlinx.coroutines.experimental.launch
+import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
+
+    @Inject lateinit var movieRepository: FakeMovieRepository
 
     lateinit var itemAdapter: ItemAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        (application as App).moviesComponent.inject(this)
 
         initializeRecyclerView()
         initializeRefreshButton()
@@ -49,7 +54,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun asyncLoadMovies() = async(CommonPool) {
-        FakeMovieRepository(this@MainActivity).getAll()
+        movieRepository.getAll()
     }
 
     private fun loadingMovies() {

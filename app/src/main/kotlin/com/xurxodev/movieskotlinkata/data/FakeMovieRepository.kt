@@ -1,10 +1,11 @@
 package com.xurxodev.movieskotlinkata.data
 
+import android.app.Application
 import android.content.Context
 import com.xurxodev.movieskotlinkata.model.MovieNotFoundException
 import com.xurxodev.movieskotlinkata.model.Movie
 
-class FakeMovieRepository (context: Context){
+class FakeMovieRepository (context: Application){
 
     fun getAll (): List<Movie>{
 
