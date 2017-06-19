@@ -1,29 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="2dp">
 
-    <ImageView
-        android:id="@+id/item_image"
-        android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:scaleType="centerCrop" />
+    <ProgressBar
+        android:id="@+id/pb_loading"
+        style="@style/CustomStyle.ProgressBar" />
 
-    <TextView
-        android:id="@+id/item_title"
+    <LinearLayout
+        android:id="@+id/movie_detail_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp"
-        android:text="title"
-        android:textAppearance="@style/TextAppearance.AppCompat.Title"/>
+        android:orientation="vertical">
 
-    <TextView
-        style="@style/TextAppearance.AppCompat.Subhead"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pretium nisi risus, vel egestas sapien tempor at. Morbi eget dolor lorem. Praesent tempor ante quis scelerisque bibendum. Donec ornare condimentum dui vitae ultrices. Nulla sodales eros aliquam diam facilisis condimentum. Nunc vel ex diam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce dictum tempor convallis."
-        android:padding="16dp"/>
+        <ImageView
+            android:id="@+id/item_image"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:scaleType="centerCrop" />
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/item_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="title"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+        <TextView
+            android:id="@+id/item_overview_title"
+            style="@style/TextAppearance.AppCompat.Headline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="@string/Overview"
+            android:textIsSelectable="true" />
+
+        <TextView
+            android:id="@+id/item_overview_content"
+            style="@style/TextAppearance.AppCompat.Subhead"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:textIsSelectable="true" />
+    </LinearLayout>
+
+
+</RelativeLayout>

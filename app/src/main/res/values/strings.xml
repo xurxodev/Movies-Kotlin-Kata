@@ -2,4 +2,5 @@
     <string name="app_name">Movies Kotlin Kata</string>
     <string name="movies_count_text">Movies: %d</string>
     <string name="loading_movies_text">Loading movies...</string>
+    <string name="Overview">Overview</string>
 </resources>
