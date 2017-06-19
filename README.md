@@ -1,6 +1,6 @@
 
 ![](http://xurxodev.com/content/images/2017/04/xurxodev-readme.png) 
-#  Movies Kotlin Kataff
+#  Movies Kotlin Kata
 Movies Kotlin kata for practice Clean Architecture and Best Practices in Android using Kotlin, implemented by Jorge Sánchez (Xurxodev)
 
 ## Kata 1
@@ -42,7 +42,7 @@ There are some links which can be useful to finish these tasks:
 
 * [Official docs Dagger 2](https://google.github.io/dagger/)
 * [Dependency Injection with Dagger 2](https://guides.codepath.com/android/Dependency-Injection-with-Dagger-2)
-* [https://antonioleiva.com/dagger-android-kotlin/](https://antonioleiva.com/dagger-android-kotlin/)
+* [How to use Dagger 2 on Android with Kotlin](https://antonioleiva.com/dagger-android-kotlin/)
 
 ## Developed By
 
