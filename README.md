@@ -17,7 +17,7 @@ This repository contains an Android application to show movies information:
 
 Every branch is a kata for refactor from app without best practices and coupled architecture to Clean Architecture and best practices. Master branch contains final result after all katas.
 
-* [Kata 1: Dependency Injection](https://github.com/xurxodev/Movies-Kotlin-Kata/blob/kata_di_movies)
+* [Kata 1: Dependency Injection](https://github.com/xurxodev/Movies-Kotlin-Kata/tree/kata_di_movies)
 * Kata 2: Model View Presenter
 * Kata 3: Clean Architecture - Domain layer
 * Kata 4: Testing with Espresso
