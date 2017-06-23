@@ -31,14 +31,11 @@ The recommendation for this exercise is:
 
   * To help you get started:
     1. Identify presentation and view logic
-    2. Create presenter for current view and its view abstraction.
-    3. Refactoring activity or fragment for implement view abstraction
-    4. Play with delay presenter response and verify not exists memory leak to rotate in loading process 
-    5. Execute the app and verify that all is right
-    
-  * Estra task if you feel with force :)
-    1. Create movies detail screen according to mvp pattern
-    2. Create navigator for navigate from movies to movie
+    2. Create presenters for current views and its view abstractions.
+    3. Refactoring activities for implement view abstractions
+    5. Create navigator for navigate from movies to movie
+    6. Play with delay presenters response and verify not exists memory leak to rotate in loading process 
+    7. Execute the app and verify that all is right
   
 
 ## Documentation
@@ -47,11 +44,11 @@ There are some links which can be useful to finish these tasks:
 
 * [Model-View-Presenter Architecture in Android Applications](http://macoscope.com/blog/model-view-presenter-architecture-in-android-applications/)
 
-##Developed By
+## Developed By
 
 * Jorge Sánchez Fernández aka [xurxodev](https://twitter.com/xurxodev)
 
-##License
+## License
 
 
     Copyright 2017 Jorge Sánchez Fernández
