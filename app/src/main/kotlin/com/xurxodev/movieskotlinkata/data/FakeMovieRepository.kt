@@ -1,13 +1,13 @@
 package com.xurxodev.movieskotlinkata.data
 
 import android.app.Application
-import android.content.Context
 import com.xurxodev.movieskotlinkata.model.MovieNotFoundException
 import com.xurxodev.movieskotlinkata.model.Movie
+import com.xurxodev.movieskotlinkata.presenter.boundary.MovieRepository
 
-class FakeMovieRepository (context: Application){
+class FakeMovieRepository (context: Application): MovieRepository {
 
-    fun getAll (): List<Movie>{
+    override fun getAll (): List<Movie>{
 
         val BASE_ADDRESS = "http://image.tmdb.org/t/p/w1300_and_h730_bestv2/"
 
@@ -35,12 +35,7 @@ class FakeMovieRepository (context: Application){
 
     }
 
-    fun getById (id: Long): Movie{
-
-        val movie = getAll().firstOrNull{it.id == id} ?: throw MovieNotFoundException()
-
-        return movie
-    }
+    override fun getById (id: Long) = getAll().firstOrNull{it.id == id} ?: throw MovieNotFoundException()
 }
 
 

@@ -5,15 +5,15 @@ import android.view.View
 import android.view.ViewGroup
 import com.xurxodev.moviesandroidkotlin.R
 import com.xurxodev.movieskotlinkata.model.Movie
-import kotlinx.android.synthetic.main.view_item.view.*
+import kotlinx.android.synthetic.main.activity_movie_detail.view.*
 
-class ItemAdapter(val listener: (Movie) -> Unit) :
-        RecyclerView.Adapter<ItemAdapter.ViewHolder>() {
+class MovieAdapter(val listener: (Movie) -> Unit) :
+        RecyclerView.Adapter<MovieAdapter.ViewHolder>() {
 
     private var movies: List<Movie> = ArrayList()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(parent.inflate(R.layout.view_item))
+        return ViewHolder(parent.inflate(R.layout.view_movie))
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) = with(holder.itemView) {

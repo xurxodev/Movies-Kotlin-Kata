@@ -1,14 +1,14 @@
 package com.xurxodev.movieskotlinkata
 
 import android.app.Application
-import com.xurxodev.movieskotlinkata.di.ApplicationModule
-import com.xurxodev.movieskotlinkata.di.DaggerMoviesComponent
-import com.xurxodev.movieskotlinkata.di.DataModule
-import com.xurxodev.movieskotlinkata.di.MoviesComponent
+import com.xurxodev.movieskotlinkata.di.module.ApplicationModule
+import com.xurxodev.movieskotlinkata.di.module.DataModule
+import com.xurxodev.movieskotlinkata.di.component.AppComponent
+import com.xurxodev.movieskotlinkata.di.component.DaggerAppComponent
 
 class App:Application(){
-    val moviesComponent:MoviesComponent by lazy {
-        DaggerMoviesComponent
+    val appComponent: AppComponent by lazy {
+        DaggerAppComponent
                 .builder()
                 .applicationModule(ApplicationModule(this))
                 .dataModule(DataModule())
@@ -18,7 +18,6 @@ class App:Application(){
     override fun onCreate() {
         super.onCreate()
     }
-
 
 }
 
