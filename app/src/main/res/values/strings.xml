@@ -3,4 +3,5 @@
     <string name="movies_count_text">Movies: %d</string>
     <string name="loading_movies_text">Loading movies...</string>
     <string name="Overview">Overview</string>
+    <string name="base_address">http://image.tmdb.org/t/p/w1300_and_h730_bestv2/</string>
 </resources>
