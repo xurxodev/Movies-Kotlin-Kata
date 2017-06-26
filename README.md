@@ -3,7 +3,9 @@
 #  Movies Kotlin Kata 
 Movies Kotlin kata for practice Clean Architecture and Best Practices in Android using Kotlin, implemented by Jorge Sánchez (Xurxodev)
 
-Kata 2
+![](http://xurxodev.com/content/images/2017/06/kotlin_mvp.jpg)
+
+# Kata 2
 
 - We are here to practice Model View Presenter.
 - We are going to practice pair programming.
