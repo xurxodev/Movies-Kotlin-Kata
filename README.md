@@ -3,6 +3,8 @@
 #  Movies Kotlin Kata
 Movies Kotlin kata for practice Clean Architecture and Best Practices in Android using Kotlin, implemented by Jorge Sánchez (Xurxodev)
 
+![](http://xurxodev.com/content/images/2017/06/kotlin_dagger2.jpg)
+
 ## Kata 1
 
 - We are here to practice Dependency Injection.
