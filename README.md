@@ -3,6 +3,8 @@
 #  Movies Kotlin Kata [![Build Status](https://travis-ci.org/xurxodev/Movies-Kotlin-Kata.svg?branch=master)](https://travis-ci.org/xurxodev/Movies-Kotlin-Kata)
 Movies Kotlin kata for practice Clean Architecture and Best Practices in Android using Kotlin, implemented by Jorge Sánchez (Xurxodev)
 
+![](http://xurxodev.com/content/images/2017/06/tori-kotlin.jpg)
+
 ## Considerations
 
 Master branch contains already solved katas, exists a branch for every kata.
