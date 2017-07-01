@@ -21,7 +21,7 @@ Every branch is a kata for refactor from app without best practices and coupled 
 
 * [Kata 1: Dependency Injection](https://github.com/xurxodev/Movies-Kotlin-Kata/tree/kata_di_movies)
 * [Kata 2: Model View Presenter](https://github.com/xurxodev/Movies-Kotlin-Kata/tree/kata_mvp_movies)
-* Kata 3: Clean Architecture - Domain layer
+* [Kata 3: Clean Architecture - Domain layer](https://github.com/xurxodev/Movies-Kotlin-Kata/tree/kata_domain_data_movies)
 * Kata 4: Testing with Espresso
 
 ## Developed By
