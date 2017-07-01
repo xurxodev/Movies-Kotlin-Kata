@@ -3,14 +3,16 @@ package com.xurxodev.movieskotlinkata.di.module
 import android.app.Activity
 import android.content.Context
 import com.xurxodev.movieskotlinkata.di.scope.ActivityScope
-import com.xurxodev.movieskotlinkata.presenter.MoviesDetailPresenter
-import com.xurxodev.movieskotlinkata.presenter.MoviesListPresenter
-import com.xurxodev.movieskotlinkata.presenter.boundary.MovieRepository
-import com.xurxodev.movieskotlinkata.presenter.boundary.Navigator
-import com.xurxodev.movieskotlinkata.view.SimpleNavigator
+import com.xurxodev.movieskotlinkata.domain.boundary.Executor
+import com.xurxodev.movieskotlinkata.presentation.presenter.MoviesDetailPresenter
+import com.xurxodev.movieskotlinkata.presentation.presenter.MoviesListPresenter
+import com.xurxodev.movieskotlinkata.domain.boundary.MovieRepository
+import com.xurxodev.movieskotlinkata.domain.usecase.GetMovieByIdUseCase
+import com.xurxodev.movieskotlinkata.domain.usecase.GetMoviesUseCase
+import com.xurxodev.movieskotlinkata.presentation.presenter.boundary.Navigator
+import com.xurxodev.movieskotlinkata.presentation.SimpleNavigator
 import dagger.Module
 import dagger.Provides
-import javax.inject.Singleton
 
 @Module
 class ActivityModule(private val activityContext: Activity) {
@@ -26,11 +28,21 @@ class ActivityModule(private val activityContext: Activity) {
     }
 
     @Provides @ActivityScope
-    fun providesMovieListPresenter(movieRepository: MovieRepository,
-                                   navigator:Navigator): MoviesListPresenter
-            = MoviesListPresenter(movieRepository, navigator)
+    fun providesGetMoviesUseCase(movieRepository: MovieRepository,
+                                 executor: Executor): GetMoviesUseCase
+            = GetMoviesUseCase(movieRepository,executor)
 
     @Provides @ActivityScope
-    fun providesMoviesDetailPresenter(movieRepository: MovieRepository): MoviesDetailPresenter
-            = MoviesDetailPresenter(movieRepository)
+    fun providesGetMovieByIdUseCase(movieRepository: MovieRepository,
+                                    executor: Executor): GetMovieByIdUseCase
+            = GetMovieByIdUseCase(movieRepository,executor)
+
+    @Provides @ActivityScope
+    fun providesMovieListPresenter(getMoviesUseCase: GetMoviesUseCase,
+                                   navigator:Navigator): MoviesListPresenter
+            = MoviesListPresenter(getMoviesUseCase, navigator)
+
+    @Provides @ActivityScope
+    fun providesMoviesDetailPresenter(getMovieByIdUseCase: GetMovieByIdUseCase): MoviesDetailPresenter
+            = MoviesDetailPresenter(getMovieByIdUseCase)
 }

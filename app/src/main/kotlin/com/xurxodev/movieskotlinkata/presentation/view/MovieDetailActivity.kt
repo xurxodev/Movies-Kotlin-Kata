@@ -1,4 +1,4 @@
-package com.xurxodev.movieskotlinkata.view
+package com.xurxodev.movieskotlinkata.presentation.view
 
 import android.content.Context
 import android.content.Intent
@@ -8,12 +8,13 @@ import android.view.View
 import com.xurxodev.moviesandroidkotlin.R
 import com.xurxodev.movieskotlinkata.App
 import com.xurxodev.movieskotlinkata.di.module.ActivityModule
-import com.xurxodev.movieskotlinkata.model.Movie
-import com.xurxodev.movieskotlinkata.presenter.MoviesDetailPresenter
+import com.xurxodev.movieskotlinkata.domain.entity.Movie
+import com.xurxodev.movieskotlinkata.presentation.presenter.MoviesDetailPresenter
 import kotlinx.android.synthetic.main.activity_movie_detail.*
 import javax.inject.Inject
 
 class MovieDetailActivity : AppCompatActivity(),MoviesDetailPresenter.View {
+
     companion object {
         val EXTRA_ID = "MovieDetailActivity:id"
 
@@ -62,5 +63,13 @@ class MovieDetailActivity : AppCompatActivity(),MoviesDetailPresenter.View {
     override fun hideLoading() {
         pb_loading.visibility = View.GONE
         movie_detail_container.visibility = View.VISIBLE
+    }
+
+    override fun showMovieNotFoundError() {
+        this.toast(R.string.movie_not_found_text)
+    }
+
+    override fun showConnectionError() {
+        this.toast(R.string.connection_error_text)
     }
 }

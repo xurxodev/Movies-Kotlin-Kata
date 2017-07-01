@@ -2,7 +2,7 @@ package com.xurxodev.movieskotlinkata.di.module
 
 import android.app.Application
 import com.xurxodev.movieskotlinkata.data.FakeMovieRepository
-import com.xurxodev.movieskotlinkata.presenter.boundary.MovieRepository
+import com.xurxodev.movieskotlinkata.domain.boundary.MovieRepository
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton

@@ -1,4 +1,4 @@
-package com.xurxodev.movieskotlinkata.view
+package com.xurxodev.movieskotlinkata.presentation.view
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
@@ -6,13 +6,13 @@ import android.view.View
 import com.xurxodev.moviesandroidkotlin.R
 import com.xurxodev.movieskotlinkata.App
 import com.xurxodev.movieskotlinkata.di.module.ActivityModule
-import com.xurxodev.movieskotlinkata.model.Movie
-import com.xurxodev.movieskotlinkata.presenter.MoviesListPresenter
+import com.xurxodev.movieskotlinkata.domain.entity.Movie
+import com.xurxodev.movieskotlinkata.presentation.adapter.MovieAdapter
+import com.xurxodev.movieskotlinkata.presentation.presenter.MoviesListPresenter
 import kotlinx.android.synthetic.main.activity_movies.*
 import javax.inject.Inject
 
 class MovieListActivity : AppCompatActivity(), MoviesListPresenter.View {
-
     @Inject lateinit var presenter: MoviesListPresenter
 
     lateinit var movieAdapter: MovieAdapter
@@ -69,8 +69,10 @@ class MovieListActivity : AppCompatActivity(), MoviesListPresenter.View {
     }
 
     override fun showTotalMovies(count: Int) {
-        val countText = getString(R.string.movies_count_text)
+        movies_title_text_view.text =  getString(R.string.movies_count_text,count)
+    }
 
-        movies_title_text_view.text = String.format(countText, count)
+    override fun showConnectionError() {
+        this.toast(R.string.connection_error_text)
     }
 }

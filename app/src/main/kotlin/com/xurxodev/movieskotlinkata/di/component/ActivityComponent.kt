@@ -2,8 +2,8 @@ package com.xurxodev.movieskotlinkata.di.component
 
 import com.xurxodev.movieskotlinkata.di.module.ActivityModule
 import com.xurxodev.movieskotlinkata.di.scope.ActivityScope
-import com.xurxodev.movieskotlinkata.view.MovieDetailActivity
-import com.xurxodev.movieskotlinkata.view.MovieListActivity
+import com.xurxodev.movieskotlinkata.presentation.view.MovieDetailActivity
+import com.xurxodev.movieskotlinkata.presentation.view.MovieListActivity
 import dagger.Subcomponent
 
 @ActivityScope

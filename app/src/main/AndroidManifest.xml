@@ -12,14 +12,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:name="com.xurxodev.movieskotlinkata.App">
-        <activity android:name="com.xurxodev.movieskotlinkata.view.MovieListActivity">
+        <activity android:name="com.xurxodev.movieskotlinkata.presentation.view.MovieListActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.xurxodev.movieskotlinkata.view.MovieDetailActivity">
+        <activity android:name="com.xurxodev.movieskotlinkata.presentation.view.MovieDetailActivity">
 
         </activity>
     </application>
