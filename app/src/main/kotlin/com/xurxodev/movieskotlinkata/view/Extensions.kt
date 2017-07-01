@@ -10,7 +10,7 @@ import com.squareup.picasso.Picasso
 import java.io.Console
 
 fun Context.toast(text: CharSequence, length: Int = Toast.LENGTH_SHORT) {
-    Toast.makeText(this, text, Toast.LENGTH_SHORT).show()
+    Toast.makeText(this, text, length).show()
 }
 
 fun ViewGroup.inflate(layoutRes: Int): View {
