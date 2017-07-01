@@ -1,9 +1,15 @@
 
 ![](http://xurxodev.com/content/images/2017/04/xurxodev-readme.png) 
-#  Movies Kotlin Kata [![Build Status](https://travis-ci.org/xurxodev/Movies-Kotlin-Kata.svg?branch=master)](https://travis-ci.org/xurxodev/Movies-Kotlin-Kata)
+#  Movies Kotlin Kata
 Movies Kotlin kata for practice Clean Architecture and Best Practices in Android using Kotlin, implemented by Jorge Sánchez (Xurxodev)
 
-![](http://xurxodev.com/content/images/2017/06/tori-kotlin.jpg)
+![](http://xurxodev.com/content/images/2017/07/kotlin_espresso.png)
+
+## Kata 4
+
+- We are here to practice UI Testing.
+- We are going to use [espresso](https://google.github.io/android-testing-support-library/docs) to interact with the Application UI.
+- We are going to practice pair programming.
 
 ## Considerations
 
@@ -15,14 +21,35 @@ This repository contains an Android application to show movies information:
 
 ![](/art/movies.gif)
 
-## Katas
+Initial state in this branch is ready to just start writing UI tests.
 
-Every branch is a kata for refactor from app without best practices and coupled architecture to Clean Architecture and best practices. Master branch contains final result after all katas.
+## Tasks
 
-* [Kata 1: Dependency Injection](https://github.com/xurxodev/Movies-Kotlin-Kata/tree/kata_di_movies)
-* [Kata 2: Model View Presenter](https://github.com/xurxodev/Movies-Kotlin-Kata/tree/kata_mvp_movies)
-* Kata 3: Clean Architecture - Domain layer
-* Kata 4: Testing with Espresso
+Your task as Android Developer is to **create Espresso tests**.
+
+The recommendation for this exercise is:
+
+  * Before starting
+    1. Fork this repository and Checkout `kata_espresso_movies` branch or download zip.
+    2. Execute the application, explore it manually and make yourself familiar with the code.
+  
+  * Test to create:
+    1. Create a test that navigate to all detail movies activity and verify title as movie title
+    2. Create a test that verify the number of rows is equal than movies count text
+    3. Create a test that verify that while is retrieving movies loading text is visible
+    4. Create a test that verify that while is retrieving movies progress bar is visible
+    
+  * Rules
+    1. First create tests without Robot Pattern
+    2. After refactoring tests to Robot Pattern
+
+## Documentation
+
+There are some links which can be useful to finish these tasks:
+
+* [androidTestingDocumentation](https://google.github.io/android-testing-support-library)
+* [espressoCheatSheet](https://google.github.io/android-testing-support-library/docs/espresso/cheatsheet/index.html)
+* [espressoIdlingResources](http://dev.jimdo.com/2014/05/09/wait-for-it-a-deep-dive-into-espresso-s-idling-resources)
 
 ## Developed By
 
