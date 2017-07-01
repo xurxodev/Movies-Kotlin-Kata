@@ -3,6 +3,8 @@
 #  Movies Kotlin Kata 
 Movies Kotlin kata for practice Clean Architecture and Best Practices in Android using Kotlin, implemented by Jorge Sánchez (Xurxodev)
 
+![](http://xurxodev.com/content/images/2017/07/kotlin_clean_architecture.png)
+
 ## Kata 3
 
 - We are here to practice Clean architecture with domain and data layers.
