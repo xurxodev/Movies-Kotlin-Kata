@@ -46,6 +46,9 @@ There are some links which can be useful to finish these tasks:
 * [Dependency Injection with Dagger 2](https://guides.codepath.com/android/Dependency-Injection-with-Dagger-2)
 * [How to use Dagger 2 on Android with Kotlin](https://antonioleiva.com/dagger-android-kotlin/)
 
+To learn the basics of kotlin I recommend the book of my friend Antonio Leiva:
+[Kotlin for Android Developers: Learn Kotlin the easy way while developing an Android App](https://www.amazon.com/gp/product/1530075610?tag=xurxodev_github-20)
+
 ## Developed By
 
 * Jorge Sánchez Fernández aka [xurxodev](https://twitter.com/xurxodev)
