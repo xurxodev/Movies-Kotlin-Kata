@@ -9,29 +9,21 @@ class GetMovieByIdUseCase (private val movieRepository: MovieRepository,
                            private val executor: Executor): UseCase(executor) {
 
     private var id: Long = 0
-    private var onMovieLoaded: (Movie) -> Unit = {}
-    private var onMovieNotFoundError: () -> Unit = {}
-    private var onConnectionError: () -> Unit = {}
 
     fun execute(id: Long, onMovieLoaded: (Movie) -> Unit, onMovieNotFoundError: () -> Unit,
                 onConnectionError: () -> Unit) {
         this.id = id
-        this.onMovieLoaded = onMovieLoaded
-        this.onMovieNotFoundError = onMovieNotFoundError
-        this.onConnectionError = onConnectionError
 
-        asyncExecute { run() }
-    }
+        asyncExecute {
+            try {
+                val movie = movieRepository.getById(id)
 
-    fun run() {
-        try {
-            val movie = movieRepository.getById(id)
-
-            uiExecute {onMovieLoaded(movie)}
-        } catch (ex: MovieNotFoundException) {
-            uiExecute {onMovieNotFoundError()}
-        } catch (ex: Exception) {
-            uiExecute {onConnectionError()}
+                uiExecute {onMovieLoaded(movie)}
+            } catch (ex: MovieNotFoundException) {
+                uiExecute {onMovieNotFoundError()}
+            } catch (ex: Exception) {
+                uiExecute {onConnectionError()}
+            }
         }
     }
 }
