@@ -2,6 +2,10 @@ package com.xurxodev.movieskotlinkata.presentation.presenter
 
 import com.xurxodev.movieskotlinkata.domain.entity.Movie
 import com.xurxodev.movieskotlinkata.domain.boundary.MovieRepository
+import com.xurxodev.movieskotlinkata.domain.common.failures.Failure
+import com.xurxodev.movieskotlinkata.domain.common.failures.MovieFailure
+import com.xurxodev.movieskotlinkata.domain.common.functional.Either
+import com.xurxodev.movieskotlinkata.domain.common.functional.fold
 import com.xurxodev.movieskotlinkata.domain.usecase.GetMovieByIdUseCase
 import kotlinx.coroutines.experimental.CommonPool
 import kotlinx.coroutines.experimental.android.UI
@@ -26,9 +30,16 @@ class MoviesDetailPresenter(private val getMovieByIdUseCase: GetMovieByIdUseCase
         loadingMovie()
 
         getMovieByIdUseCase.execute(id,
-                onMovieLoaded = {showMovie(it)},
-                onMovieNotFoundError = {showMovieNotFoundError()},
-                onConnectionError = {showConnectionError()})
+                onResult = { result ->
+                    result.fold({failure -> showError(failure)}, {movie -> showMovie(movie)})
+                })
+    }
+
+    private fun showError(failure: Failure) {
+        when(failure){
+            is Failure.NetworkConnection -> showConnectionError()
+            is MovieFailure.MovieNotFound -> showMovieNotFoundError()
+        }
     }
 
     private fun loadingMovie() {

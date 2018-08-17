@@ -1,5 +1,6 @@
 package com.xurxodev.movieskotlinkata.presentation.presenter
 
+import com.xurxodev.movieskotlinkata.domain.common.functional.fold
 import com.xurxodev.movieskotlinkata.domain.entity.Movie
 import com.xurxodev.movieskotlinkata.domain.usecase.GetMoviesUseCase
 import com.xurxodev.movieskotlinkata.presentation.presenter.boundary.Navigator
@@ -31,9 +32,9 @@ class MoviesListPresenter(private val getMoviesUseCase: GetMoviesUseCase,
         loadingMovies();
 
         getMoviesUseCase.execute(
-                onMoviesLoaded = { showMovies(it) },
-                onConnectionError = { showError() }
-        )
+                onResult = { result ->
+                    result.fold({showError()}, {movies -> showMovies(movies)})
+                })
     }
 
     private fun loadingMovies() {
