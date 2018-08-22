@@ -3,15 +3,16 @@ package com.xurxodev.movieskotlinkata.data
 import android.app.Application
 import com.xurxodev.moviesandroidkotlin.R
 import com.xurxodev.movieskotlinkata.domain.boundary.MovieRepository
-import com.xurxodev.movieskotlinkata.domain.common.failures.Failure
-import com.xurxodev.movieskotlinkata.domain.common.failures.MovieFailure
 import com.xurxodev.movieskotlinkata.domain.common.functional.Either
 import com.xurxodev.movieskotlinkata.domain.common.functional.flatMap
+import com.xurxodev.movieskotlinkata.domain.common.functional.fold
 import com.xurxodev.movieskotlinkata.domain.entity.Movie
+import com.xurxodev.movieskotlinkata.domain.failures.GetMovieFailure
+import com.xurxodev.movieskotlinkata.domain.failures.GetMoviesFailure
 
 class FakeMovieRepository (val context: Application): MovieRepository {
 
-    override fun getAll (): Either<Failure,List<Movie>> {
+    override fun getAll (): Either<GetMoviesFailure,List<Movie>> {
         try {
             val baseAddress = context.getString(R.string.base_address)
 
@@ -30,7 +31,7 @@ class FakeMovieRepository (val context: Application): MovieRepository {
             return Either.Right(movies.toList());
 
         } catch (ex: Exception) {
-            return Either.Left(Failure.NetworkConnection())
+            return Either.Left(GetMoviesFailure.NetworkConnection())
         }
     }
 
@@ -43,14 +44,14 @@ class FakeMovieRepository (val context: Application): MovieRepository {
 
     }
 
-    override fun getById (id: Long): Either<Failure,Movie> {
-        return getAll().flatMap {
+    override fun getById (id: Long): Either<GetMovieFailure,Movie> {
+        return getAll().fold({Either.Left(GetMovieFailure.NetworkConnection())},{
             if (it.any { movie -> movie.id == id }){
-                Either.Right(it.first(){it.id == id})
+                Either.Right(it.first{it.id == id})
             } else {
-                Either.Left(MovieFailure.MovieNotFound())
+                Either.Left(GetMovieFailure.MovieNotFound())
             }
-        }
+        })
     }
 }
 
