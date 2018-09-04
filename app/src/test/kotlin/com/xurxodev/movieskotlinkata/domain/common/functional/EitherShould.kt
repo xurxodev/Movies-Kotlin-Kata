@@ -1,12 +1,13 @@
 package com.xurxodev.movieskotlinkata.domain.common.functional
 
-import com.xurxodev.movieskotlinkata.domain.common.failures.Failure
 import com.xurxodev.movieskotlinkata.domain.entity.Movie
+import com.xurxodev.movieskotlinkata.domain.failures.GetMovieFailure
 import org.amshove.kluent.`should contain`
 import org.amshove.kluent.shouldBe
 import org.amshove.kluent.shouldBeInstanceOf
 
 import org.junit.Test
+import org.junit.runner.notification.Failure
 import kotlin.test.fail
 
 
@@ -32,14 +33,14 @@ class EitherShould {
     @Test
     fun fail_either_should_return_left_type() {
 
-        val failure = Failure.NetworkConnection();
+        val failure = GetMovieFailure.NetworkConnection();
         val movieFailResult = Either.Left(failure)
 
         movieFailResult shouldBeInstanceOf Either::class.java
         movieFailResult.isRight shouldBe false
         movieFailResult.isLeft shouldBe true
         movieFailResult.fold({ left ->
-            left shouldBeInstanceOf Failure::class.java
+            left shouldBeInstanceOf GetMovieFailure::class.java
             left shouldBe failure
         }, { fail() })
 
@@ -63,7 +64,7 @@ class EitherShould {
     @Test
     fun mapped_fail_either_should_return_return_left_type() {
 
-        val failure = Failure.NetworkConnection();
+        val failure = GetMovieFailure.NetworkConnection();
         val movieFailResult = Either.Left(failure)
 
         val resultMapped = movieFailResult.map { mapMovie(it) }
@@ -94,7 +95,7 @@ class EitherShould {
     @Test
     fun mapped_fail_either_list_should_return_return_left_type() {
 
-        val failure = Failure.NetworkConnection();
+        val failure = GetMovieFailure.NetworkConnection();
         val movieFailResult = Either.Left(failure)
 
         val resultMapped = movieFailResult.map { mapMovie(it) }
