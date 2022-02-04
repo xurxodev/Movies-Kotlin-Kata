@@ -5,6 +5,10 @@ Movies Kotlin kata for practice Clean Architecture and Best Practices in Android
 
 ![](http://xurxodev.com/content/images/2017/06/tori-kotlin.jpg)
 
+## Clean Architecture Course
+
+* [Curso Clean Architecture](https://xurxodev.com/curso-clean-architecture)
+
 ## Considerations
 
 Master branch contains already solved katas, exists a branch for every kata.
